@@ -3,7 +3,7 @@
 // var saveBtnEl = document.querySelector("#saveBtn");
 
 
- var userTaskEl = $('userTask');
+ var userTaskEl = $('#userTask');
 // var timeSlotEl = $('timeSlot');
 // var saveBtnEl = $('saveBtn');
 
@@ -18,11 +18,13 @@ $(document).ready(function(){
   })
 })
 
-// var task = localStorage.getItem("task");
+$('.row').each(function(element){
 
-// saveBtnEl.addEventListener('click',function(){
-//   //$('#userTask').val(userTaskEl.textContent);
-//   console.log(userTaskEl,textContent);
-//   userTaskEl.textContent = task;
-//   localStorage.setItem("task", task);
-// });
+  //var currentTime = "hour-04";
+  var hourId = $("#timeSlot").attr("id");
+  console.log(hourId);
+
+  
+
+})
+
