@@ -9,7 +9,7 @@
 
 var momentTime = moment().format("HHmm");
 //var time = moment().add(12, 'hours');
-$("#currentTime").text(currentTime);
+$("#currentTime").text(momentTime);
 
 $(document).ready(function(){
   $("#saveBtn").click(function(){
@@ -24,21 +24,21 @@ $(document).ready(function(){
 $('.row').each(function(element){
 
   //var currentTime = "hour-04";
+  //console.log(element)
   var hourString = $(this).attr("id");
   var hourId = parseInt(hourString);
-  //console.log(hourId);
-  currentTime = $("#currentTime").val();
-  parseInt(currentTime);
+  console.log(hourId);
+  //currentTime = $("#currentTime").val();
+  currentTime = parseInt(momentTime);
   console.log(currentTime);
   
-  if(currentTime > hourId){
-
-    $('input').removeClass("present past");
-    $('input').addClass("future");
-  }else if(time = hourId){
+  if(hourId <= currentTime < hourId+100 ){
     $('input').removeClass("past future");
     $('input').addClass("present");
-  }else{
+  }else if(currentTime <= hourId){
+    $('input').removeClass("present past");
+    $('input').addClass("future");
+  }else if(hourId <= currentTime){
     $('input').removeClass("present future");
     $('input').addClass("past");
   }
