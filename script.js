@@ -54,12 +54,12 @@ $('.row').each(function (element) {
 
 
   if (hourId > currentTime) {
-    $("#userTask").removeClass("present past").addClass("future");
+    $(this).children(".userTask").removeClass("present past").addClass("future");
   }else if (hourId < currentTime) {
-    $("#userTask").removeClass("future present").addClass("past");
+    $(this).children(".userTask").removeClass("future present").addClass("past");
   } else {
   // which covers the equals
-    $("#userTask").removeClass("future past").addClass("present");
+  $(this).children(".userTask").removeClass("future past").addClass("present");
   }
 
 })
