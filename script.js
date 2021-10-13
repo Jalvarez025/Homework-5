@@ -32,34 +32,13 @@ $('.row').each(function (element) {
   currentTime = parseInt(momentTime);
   console.log(currentTime);
 
-  
+  if (hourId <= currentTime && currentTime < hourId+100) {
+    $(this).children(".userTask").removeClass("future past").addClass("present");
 
-  // if (hourId <= currentTime && currentTime < nextSlot) {
-  //   //console.log('hello')
-  //   //$('input').removeClass("past future").addClass("present");
-  //   //element.classList = ["row", "present"]
-  //   //console.log(element.classList)
-    
-  // }  else if (hourId < currentTime) {
-  //   //$('input').removeClass("present future").addClass("past");
-  //   // element.classList = ["row", "past"]
-  //   // console.log(element.classList)
-    
-  // }else {
-  //   //$('input').removeClass("present past").addClass("future");
-  //   //element.classList = ["row", "future"]
-  //   //console.log(element.classList)
-    
-  // }
-
-
-  if (hourId > currentTime) {
-    $(this).children(".userTask").removeClass("present past").addClass("future");
-  }else if (hourId < currentTime) {
+  } else if (hourId < currentTime) {
     $(this).children(".userTask").removeClass("future present").addClass("past");
   } else {
-  // which covers the equals
-  $(this).children(".userTask").removeClass("future past").addClass("present");
+    $(this).children(".userTask").removeClass("present past").addClass("future");
   }
 
 })
