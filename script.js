@@ -32,29 +32,35 @@ $('.row').each(function (element) {
   currentTime = parseInt(momentTime);
   console.log(currentTime);
 
-  var nextSlot = hourId + 100;
-  console.log(nextSlot);
-
   
 
-  if (hourId <= currentTime < nextSlot) {
-    //console.log('hello')
-    //$('input').removeClass("past future").addClass("present");
-    //element.classList = ["row", "present"]
-    //console.log(element.classList)
-    $("#userTask").removeClass("future past").addClass("present");
-  }  else if (hourId < currentTime) {
-    //$('input').removeClass("present future").addClass("past");
-    // element.classList = ["row", "past"]
-    // console.log(element.classList)
-    $("#userTask").removeClass("future present").addClass("past");
-  }else {
-    //$('input').removeClass("present past").addClass("future");
-    //element.classList = ["row", "future"]
-    //console.log(element.classList)
-    $("#userTask").removeClass("present past").addClass("future");
-  }
+  // if (hourId <= currentTime && currentTime < nextSlot) {
+  //   //console.log('hello')
+  //   //$('input').removeClass("past future").addClass("present");
+  //   //element.classList = ["row", "present"]
+  //   //console.log(element.classList)
+    
+  // }  else if (hourId < currentTime) {
+  //   //$('input').removeClass("present future").addClass("past");
+  //   // element.classList = ["row", "past"]
+  //   // console.log(element.classList)
+    
+  // }else {
+  //   //$('input').removeClass("present past").addClass("future");
+  //   //element.classList = ["row", "future"]
+  //   //console.log(element.classList)
+    
+  // }
 
+
+  if (hourId > currentTime) {
+    $("#userTask").removeClass("present past").addClass("future");
+  }else if (hourId < currentTime) {
+    $("#userTask").removeClass("future present").addClass("past");
+  } else {
+  // which covers the equals
+    $("#userTask").removeClass("future past").addClass("present");
+  }
 
 })
 
