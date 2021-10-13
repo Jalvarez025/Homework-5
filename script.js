@@ -21,8 +21,8 @@ $(document).ready(function(){
   })
 })
 
-$('.row').each(function(element){
-
+$('.row').each(function (element) {
+  console.log(element)
   //var currentTime = "hour-04";
   //console.log(element)
   var hourString = $(this).attr("id");
@@ -31,17 +31,31 @@ $('.row').each(function(element){
   //currentTime = $("#currentTime").val();
   currentTime = parseInt(momentTime);
   console.log(currentTime);
+
+  var nextSlot = hourId + 100;
+  console.log(nextSlot);
+
   
-  if(hourId <= currentTime < hourId+100 ){
-    $('input').removeClass("past future");
-    $('input').addClass("present");
-  }else if(currentTime <= hourId){
-    $('input').removeClass("present past");
-    $('input').addClass("future");
-  }else if(hourId <= currentTime){
-    $('input').removeClass("present future");
-    $('input').addClass("past");
+
+  if (hourId <= currentTime < nextSlot) {
+    //console.log('hello')
+    //$('input').removeClass("past future").addClass("present");
+    //element.classList = ["row", "present"]
+    //console.log(element.classList)
+    $("#userTask").removeClass("future past").addClass("present");
+  }  else if (hourId < currentTime) {
+    //$('input').removeClass("present future").addClass("past");
+    // element.classList = ["row", "past"]
+    // console.log(element.classList)
+    $("#userTask").removeClass("future present").addClass("past");
+  }else {
+    //$('input').removeClass("present past").addClass("future");
+    //element.classList = ["row", "future"]
+    //console.log(element.classList)
+    $("#userTask").removeClass("present past").addClass("future");
   }
+
+
 })
 
 
