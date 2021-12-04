@@ -11,15 +11,40 @@ var momentTime = moment().format("HHmm");
 //var time = moment().add(12, 'hours');
 $("#currentTime").text(momentTime);
 
-$(document).ready(function(){
-  $("#saveBtn").click(function(){
-    const task = $("#userTask").val();
-    console.log(task);
-    localStorage.setItem("task", task);
-   // localStorage.getItem(task) = userTaskEl.text();
 
+
+$(document).ready(function(){
+  $("#saveBtn1").click(function(){
+    console.log("ready")
+    let task = $("#1").val();
+    console.log(task);
+    localStorage.setItem("task#1", JSON.stringify(task));
+    //localStorage.getItem( "task#1", JSON.stringify(task)) = userTaskEl.text();
+    //userTaskEl.task = localStorage.getItem(task);
+    //console.log(userTaskEl.text())
   })
+
+  $("#saveBtn2").click(function(){
+    console.log("ready")
+    let task = $("#2").val();
+    console.log(task);
+    localStorage.setItem("task#2", JSON.stringify(task));
+    //localStorage.getItem( "task#1", JSON.stringify(task)) = userTaskEl.text();
+    //userTaskEl.task = localStorage.getItem(task);
+    //console.log(userTaskEl.text())
+  })
+
+  
+  //localStorage.getItem(task) = userTaskEl.val();
 })
+
+$(document).ready(function(){
+  let task = $("#1").val();
+  console.log(task)
+  task.userTaskEl = localStorage.getItem("task#1")
+})
+
+
 
 $('.row').each(function (element) {
   console.log(element)
