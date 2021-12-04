@@ -1,11 +1,11 @@
-//var userTaskEl = document.getElementById("userTask");
+var userTaskEl = document.getElementById("userTask");
 // var timeSlotEl = document.getElementById("timeSlot");
-// var saveBtnEl = document.querySelector("#saveBtn");
+var saveBtnEl = document.querySelector("#saveBtn");
 
 
- var userTaskEl = $('#userTask');
+var userTaskEl = $('#userTask');
 // var timeSlotEl = $('timeSlot');
-// var saveBtnEl = $('saveBtn');
+var saveBtnEl = $('saveBtn');
 
 var momentTime = moment().format("HHmm");
 //var time = moment().add(12, 'hours');
@@ -15,8 +15,8 @@ $(document).ready(function(){
   $("#saveBtn").click(function(){
     const task = $("#userTask").val();
     console.log(task);
-    localStorage.setItem("task", task);
-   // localStorage.getItem(task) = userTaskEl.text();
+    window.localStorage.setItem('task', userTaskEl.textContent());
+    window.localStorage.getItem('task') = userTaskEl.textContent();
 
   })
 })
