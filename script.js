@@ -35,6 +35,9 @@ var momentTime = moment().format("HHmm");
 //var time = moment().add(12, 'hours');
 $("#currentTime").text(momentTime);
 
+var momentDate = moment().format("MMM Do YYYY");
+$("#currentDate").text(momentDate);
+
 $(document).ready(function(){
   let task1 = JSON.parse(localStorage.getItem("task#1"))
   console.log(task1)
