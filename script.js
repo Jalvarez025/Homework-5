@@ -6,6 +6,7 @@
  var userTaskEl = $('#userTask');
 // var timeSlotEl = $('timeSlot');
 // var saveBtnEl = $('saveBtn');
+var inputField = $('#1')
 
 var momentTime = moment().format("HHmm");
 //var time = moment().add(12, 'hours');
@@ -41,7 +42,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   let task = $("#1").val();
   console.log(task)
-  task.userTaskEl = localStorage.getItem("task#1")
+  inputField = localStorage.getItem("task#1")
 })
 
 
